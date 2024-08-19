@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Generator Kodow Qr</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="container">
+        <p>Wprowadz swoj Tekst lub Link</p>
+        <input type="text" placeholder="Tekst lub Link" id="qrText">
+
+        <div id="imgbox">
+            <img src="" id="qrimage">
+        </div>
+
+        <button onclick="generateQR()">Wygeneruj kod QR</button>
+    </div>
+
+    <script>
+
+    let imgbox = document.getElementById("imgbox")
+    let qrimage = document.getElementById("qrimage")
+    let qrText = document.getElementById("qrText")
+
+    function generateQR(){
+        qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+        imgbox.classList.add("show-img");
+    }
+
+
+    </script>
+</body>
+</html>
